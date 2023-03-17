@@ -1,0 +1,127 @@
+body{
+    background-image: url("/img/Slice\ 2.png");
+    width: 1920px;
+    height: 1080px;
+}
+.perso{
+    position: absolute;
+    margin-top: 577px;
+    z-index: 2;
+}
+.cadre{
+    position: absolute;
+    margin-left: 423px;
+    margin-top: 70px;
+    z-index: 1;
+}
+.verre{
+    position: absolute;
+    margin-top: 395px;
+    margin-left: 1070px;
+}
+.coq{
+    position: absolute;
+    margin-top: 94px;
+    margin-left: 790px;
+    z-index: 2;
+}
+/*ONGLET STYLE*/
+.active-tab{
+    color: #BA8736;
+}
+button:hover{
+    color: #BA8736;
+}
+
+/*O fin NGLET STYLE*/
+/* GRID POUR superposition*/
+.maincontenu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:(2,1fr);
+}
+.tab-content  { 
+    grid-area: 1 / 1 / 2 / 2;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.4s ease-out;
+}
+.active-tab-content {
+    visibility: visible;
+    opacity: 1;
+}
+/* FIN GRID POUR superposition*/
+.contenue{
+    position: absolute;
+    margin-left: 450px;
+    z-index: 3;
+}
+button{
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-size: 24px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 800;
+    background: transparent;
+    margin-right: 75px;
+    margin-top: 12px;
+}
+p{
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+}
+.navbar{
+    margin-left: 127px;
+    margin-top: 218px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h1{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #37402C ;
+    margin-bottom: 40px;
+}
+.bras{
+    width: 800px;
+    margin-top: 50px;
+    text-align: center;
+}
+.gamme{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.presentation{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 680px;
+    margin-left: 50px;
+    margin-top: 25px;
+}
+.gammeTexte{
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 680px;
+}
+.gamme1a3{
+    display: flex;
+    width: 650px;
+    margin:0px auto;
+    justify-content: space-between;
+}
+ .gamme1 H1 , .gamme2 H1 ,.gamme3 H1{
+    margin-top: 40px;
+}
+.textedescription{
+    margin-top: 20px;
+    width: 246px;
+    margin-left: -55px;
+    margin-right: 60px;
+
+}

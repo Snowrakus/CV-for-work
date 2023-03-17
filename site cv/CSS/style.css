@@ -1,0 +1,238 @@
+/* mise en page du contenue de base*/
+    *, ::before, ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "M PLUS 1 Code";
+        color: white;
+        overflow: hidden;
+}
+    .page-limitation {
+        border: solid 5px white;
+        background-color: black;
+        margin: 25px 100px;
+        overflow: hidden;
+        height: 50%;
+        
+    }
+    .tabs{
+        display: flex;
+}
+    p{
+        font-size: 18px;
+    }
+/*mise en place noise */
+.noise{
+    z-index: -1;
+    background-color: #080808;
+    position: absolute;
+    margin-top: -50px;
+    height: 120vh;
+    width: 100%;
+}
+.noise::after{
+    content: "";
+    background-image: url("/RESSOURCES/img-noise-1920x1080.png");
+    height: 150%;
+    width: 150%;
+    opacity: 1;
+    position: absolute;
+    animation: grain  5s steps(10) infinite;
+}
+@keyframes grain {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-18, -5%) }
+    30% { transform:translate(-6%, -25%) }
+    40% { transform:translate(-35%, -15%) }
+    50% { transform:translate(-9%, -25%) }
+    60% { transform:translate(-15%, -5%) }
+    70% { transform:translate(-3%, -35%) }
+    80% { transform:translate(-20%, -10%) }
+    90% { transform:translate(-2%, -15%) }
+}
+/* mise en place du slide */
+    @keyframes slidein {
+        0%{
+            transform: translateX(0);      
+        }
+        100%{
+            transform: translateX(-900px);
+        }
+        
+    }
+    header{
+        margin-top: 30px;
+    }
+    .slide{
+        display: flex;
+        font-weight: 900;
+        font-size: 48;
+        width: 159%;
+        white-space: nowrap;
+        border-bottom: solid 2px white;
+        border-top:  solid 2px white;
+        transform: rotate(2deg);
+        
+    }
+    .slide h1{
+        font-family: "Ubuntu";
+        font-size: 42px;
+        font-weight: 700;
+        animation: slidein 12s infinite linear;
+    }
+    .slide h1:nth-child(even){
+        color: black;
+        -webkit-text-stroke: 2px white;
+    }
+    .slide h1:before{
+        content: "";
+        display: inline-block;
+        height: 30px;
+        width: 2px;
+        background-color: white;
+        margin:0 15px;
+    }
+/*menu*/
+    .navbar {
+        margin: 40px 20px 0px 75px ;
+    }
+    .tab{
+        border: none;
+        background-color: transparent;
+        color: white;
+        padding-bottom: 30px;
+        font-size: 42px;
+        font-family: "M PLUS 1 Code";
+        font-weight: 600;
+        white-space: nowrap;
+        text-transform: uppercase;
+
+    }
+    .contact {
+        font-size: 42px;
+        font-family: "M PLUS 1 Code";
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+    }
+/* mise en place da la superposition des grids*/
+    .contenu{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:(3,1fr);
+    }
+    .active-tab {
+        color: aquamarine;
+    }
+    .tab-content  { 
+        grid-area: 1 / 1 / 2 / 2;
+        opacity: 0;
+        visibility: hidden; 
+        transition: opacity 0.4s ease-out;
+    }
+    .active-tab-content {
+        visibility: visible;
+        opacity: 1;
+    }
+/* content tab 1 */
+    .content1{ 
+        margin-top: 130px;
+        display: flex;
+    }
+    h2 {
+        font-size: 35px;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .text1{
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-right: 20px;
+    }
+    .content1 p {
+        margin-top: 30px;
+    }
+    /*pong canvas*/
+    #breakout-canvas{
+        margin-bottom: 10px;
+    }
+    /*design rond*/
+        .imagemoi{
+            z-index: 3;
+            transform: translate(400px, 10px);
+        }
+        .imagemoi img{
+            width: 100%;
+        }
+        .cercletrans{
+            transform: translate(-170px, 10px);
+        }
+        .cercle{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 650px;
+            width: 650px;
+            border: solid 1px white;
+            transform: rotate(14deg);
+        }
+        .carre{
+            height: 150px;
+            width: 150px;
+            border: solid 1px white;
+            z-index: 1;
+        }
+        .croix{
+            width:150px;
+            height:150px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transform: translate(-276.5%, -1%);
+        }
+        .croix:before,.croix:after{
+            content: "";
+            position: absolute;
+            width:650%;
+            height:1px;
+            background: linear-gradient(90deg, rgba(245,231,231,0.5088235977984944) 0%, 
+            rgba(255,255,255,1) 50%, rgba(255,255,255,0.5032213569021359) 100%);
+        }
+        .croix:before{
+            transform:rotate(45deg);
+        }
+        .croix:after{
+            transform:rotate(-45deg);
+        }
+/*content tab 2*/
+    .content2 {
+        width: 60%;
+        margin: auto;
+    }
+    .popup{
+        padding: 50px 100px;
+        background-color: #0A0A0A;
+        border: solid 2px white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .popup p {
+        margin-top:20px;
+        margin-bottom: 20px;
+    }
+    .popup h2 {
+        margin-top: 20px;
+    }
+/*content tab 3*/
+    
