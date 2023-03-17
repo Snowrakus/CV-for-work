@@ -1,23 +1,24 @@
 body{
-    background-image: url("/img/Slice\ 2.png");
-    width: 1920px;
-    height: 1080px;
+    background: no-repeat url("/img/Slice\ 2.png");
+    margin-top: -60px;
+    overflow: hidden;
 }
 .perso{
     position: absolute;
     margin-top: 577px;
-    z-index: 2;
+    z-index: 3;
 }
 .cadre{
     position: absolute;
     margin-left: 423px;
     margin-top: 70px;
-    z-index: 1;
+    z-index: 2;
 }
 .verre{
     position: absolute;
     margin-top: 395px;
     margin-left: 1070px;
+    z-index: 2;
 }
 .coq{
     position: absolute;
@@ -124,4 +125,17 @@ h1{
     margin-left: -55px;
     margin-right: 60px;
 
+}
+
+.blobwave{
+    position: absolute;
+    margin-top: 120px;
+    width: 110%;
+    z-index: 1;
+    transform: translate(-29px) ;
+}
+svg{
+    display: block;
+    margin-top: 0px;
+    padding-top: 0px;
 }
